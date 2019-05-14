@@ -1,10 +1,11 @@
-{% extends 'blog/basic.html' %}
+{% extends 'blog/basic.html' %}                    #create your own basic html file 
 
 {% block title %} checkout {% endblock %}
 
-{% block css %}  {% endblock %}
+{% block css %}  {% endblock %}                            #extending template basic.html
 
-{% block body %} 
+{% block body %}                                           
+
 
  <div class="container">
 
@@ -80,7 +81,7 @@
 	if(localStorage.getItem('cart') == null) {
 		var cart = {};
 	}
-	else {
+	else {                                                             #passing item details in cart
 		cart = JSON.parse(localStorage.getItem('cart'));
 	}
 
