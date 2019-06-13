@@ -1,5 +1,6 @@
-﻿
+
     {% extends 'blog/basic.html' %}
+    {% block title %} search page {% endblock %}
     
     {% block css %}
         .col-md-3 {
@@ -110,6 +111,12 @@
 
     {% block js %}
        <script>
+
+
+{% if msg|length != 0 %}
+alert('{{msg}}');
+window.location.href = "/"
+{% endif %}
 // Find out the cart items from localStorage
 if (localStorage.getItem('cart') == null) {
     var cart = {};

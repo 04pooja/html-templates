@@ -1,11 +1,10 @@
-{% extends 'blog/basic.html' %}                    #create your own basic html file 
+{% extends 'blog/basic.html' %}
 
 {% block title %} checkout {% endblock %}
 
-{% block css %}  {% endblock %}                            #extending template basic.html
+{% block css %}  {% endblock %}
 
-{% block body %}                                           
-
+{% block body %} 
 
  <div class="container">
 
@@ -27,6 +26,7 @@
 
 <form method="post" action="/blog/checkout/">{% csrf_token %}
 	<input type="hidden" name="itemsjson" id="itemsjson">
+  <input type="hidden" name="amount" id="amount">
 
   <div class="form-row">
     <div class="form-group col-md-6">
@@ -81,7 +81,7 @@
 	if(localStorage.getItem('cart') == null) {
 		var cart = {};
 	}
-	else {                                                             #passing item details in cart
+	else {
 		cart = JSON.parse(localStorage.getItem('cart'));
 	}
 
@@ -115,6 +115,6 @@ $('#items').append(mystr);
     localStorage.clear();
     document.location = "/blog";
     {% endif %}
+ $('#amount').val($('#totalprice').html())
 </script>
-
-{% endblock   %}
+{% endblock %}
