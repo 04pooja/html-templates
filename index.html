@@ -118,7 +118,6 @@ if (localStorage.getItem('cart') == null) {
     updateCart(cart);
 }
 //  add/increment the item
-
     $('.divpr').on('click', 'button.cart', function(){
     var idstr = this.id.toString();
     if (cart[idstr] != undefined) {
@@ -187,5 +186,3 @@ $('.divpr').on("click", "button.plus", function() {
 </script>
 
 {% endblock %}
-
-
